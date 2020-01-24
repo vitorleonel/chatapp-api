@@ -12,11 +12,11 @@ class UserRepository {
     });
   }
 
-  async edit(userId: string, name: string): Promise<UserInterface | null> {
+  async edit(userId: string, name: string): Promise<UserInterface> {
     const user = await User.findOneAndUpdate(
       { _id: userId },
       { name },
-      { upsert: true },
+      { new: true },
     );
 
     if (!user) throw new Error('User not found.');

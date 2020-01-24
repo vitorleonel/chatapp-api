@@ -28,19 +28,26 @@ describe('UserRepository', () => {
     expect(user.name).toEqual(name);
   });
 
-  it('should edit user', async () => {
+  it('should edit user by id', async () => {
     const currentUser: UserInterface = await userRepository.create();
     const newName = 'New name';
 
-    const updatedUser: UserInterface | null = await userRepository.edit(
+    const updatedUser: UserInterface = await userRepository.edit(
       currentUser._id,
       newName,
     );
 
-    console.log(currentUser);
-    console.log(updatedUser);
+    expect(updatedUser.name).not.toEqual(currentUser.name);
+    expect(updatedUser.name).toEqual(newName);
+  });
 
-    expect(updatedUser?.name).not.toEqual(currentUser.name);
-    expect(updatedUser?.name).toEqual(newName);
+  it('should edit user by invalid id', async () => {
+    try {
+      await userRepository.edit('5e2b4ea007e7823fc1a00220', 'NewName');
+
+      expect(true).toBe(false);
+    } catch (error) {
+      expect(error.message).toBe('User not found.');
+    }
   });
 });

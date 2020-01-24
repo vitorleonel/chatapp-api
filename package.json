@@ -8,7 +8,12 @@
   "private": true,
   "scripts": {
     "start": "nodemon src/server.ts",
-    "test": "jest"
+    "test": "jest --runInBand"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.3",
