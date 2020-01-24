@@ -1,5 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
+export interface UserInterface extends mongoose.Document {
+  name?: string;
+  secretHash: string;
+  createdAt: Date;
+  modifiedAt: Date;
+}
+
 const UserSchema: Schema = new Schema(
   {
     name: {
@@ -19,4 +26,4 @@ const UserSchema: Schema = new Schema(
   },
 );
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model<UserInterface>('User', UserSchema);
