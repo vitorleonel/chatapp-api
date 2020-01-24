@@ -27,4 +27,20 @@ describe('UserRepository', () => {
 
     expect(user.name).toEqual(name);
   });
+
+  it('should edit user', async () => {
+    const currentUser: UserInterface = await userRepository.create();
+    const newName = 'New name';
+
+    const updatedUser: UserInterface | null = await userRepository.edit(
+      currentUser._id,
+      newName,
+    );
+
+    console.log(currentUser);
+    console.log(updatedUser);
+
+    expect(updatedUser?.name).not.toEqual(currentUser.name);
+    expect(updatedUser?.name).toEqual(newName);
+  });
 });

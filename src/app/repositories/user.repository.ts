@@ -11,6 +11,18 @@ class UserRepository {
       secretHash,
     });
   }
+
+  async edit(userId: string, name: string): Promise<UserInterface | null> {
+    const user = await User.findOneAndUpdate(
+      { _id: userId },
+      { name },
+      { upsert: true },
+    );
+
+    if (!user) throw new Error('User not found.');
+
+    return user;
+  }
 }
 
 export default UserRepository;
