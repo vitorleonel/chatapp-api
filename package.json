@@ -1,0 +1,9 @@
+{
+  "name": "getwime-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:vitorleonel/slack-slash-shopping.git",
+  "author": "Vitor Leonel <falecom@vitorleonel.com>",
+  "license": "MIT",
+  "private": true
+}
