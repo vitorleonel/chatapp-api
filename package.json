@@ -7,7 +7,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "precommit": "jest",
     "start": "nodemon src/server.ts",
     "test": "jest"
   },
