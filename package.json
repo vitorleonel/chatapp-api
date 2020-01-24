@@ -8,11 +8,12 @@
   "private": true,
   "scripts": {
     "start": "nodemon src/server.ts",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "lint": "eslint src/*.ts src/**/*.ts"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "yarn lint && yarn test"
     }
   },
   "devDependencies": {
