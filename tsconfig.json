@@ -13,11 +13,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "paths": {
-      "@/*": ["app/*"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
