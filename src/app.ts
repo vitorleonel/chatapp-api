@@ -1,6 +1,6 @@
-import 'dotenv/config';
 import express from 'express';
 
+import mongoose from 'mongoose';
 import routes from './routes';
 
 class App {
@@ -9,7 +9,16 @@ class App {
   constructor() {
     this.server = express();
 
+    this.database();
     this.middlewares();
+  }
+
+  database(): void {
+    mongoose.connect(`${process.env.MONGO_URL}`, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true,
+    });
   }
 
   middlewares(): void {
