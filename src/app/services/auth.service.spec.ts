@@ -1,10 +1,10 @@
 import { JsonWebTokenError } from 'jsonwebtoken';
 
-import AuthService from '@/services/auth.service';
-import UserRepository from '@/repositories/user.repository';
+import AuthService from './auth.service';
+import UserRepository from '../repositories/user.repository';
 
-import TestUtil from '@/utils/test';
-import { UserInterface } from '@/models/user.model';
+import TestUtil from '../utils/test';
+import { UserInterface } from '../models/user.model';
 
 describe('AuthService', () => {
   let userRepository: UserRepository;

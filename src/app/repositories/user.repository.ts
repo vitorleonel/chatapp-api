@@ -1,6 +1,6 @@
 import uuidv4 from 'uuid/v4';
 
-import User, { UserInterface } from '@/models/user.model';
+import User, { UserInterface } from '../models/user.model';
 
 class UserRepository {
   create(name?: string): Promise<UserInterface> {

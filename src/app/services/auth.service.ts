@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import { UserInterface } from '@/models/user.model';
+import { UserInterface } from '../models/user.model';
 
 class AuthService {
   private appSecret: string;
