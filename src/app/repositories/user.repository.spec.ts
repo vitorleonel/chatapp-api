@@ -1,7 +1,7 @@
-import { UserInterface } from '@/models/user.model';
-import UserRepository from '@/repositories/user.repository';
+import { UserInterface } from '../models/user.model';
+import UserRepository from './user.repository';
 
-import TestUtil from '@/utils/test';
+import TestUtil from '../utils/test';
 
 describe('UserRepository', () => {
   const userRepository = new UserRepository();

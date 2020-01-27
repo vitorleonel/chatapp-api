@@ -1,4 +1,4 @@
-import TestUtil from '@/utils/test';
+import TestUtil from './test';
 
 describe('TestUtil', () => {
   beforeAll(async () => {
