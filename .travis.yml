@@ -1,7 +1,10 @@
 language: node_js
+node_js:
+  - '12'
 before_install:
   - npm install -g yarn
-script:
+install:
   - yarn
+script:
   - yarn test
   - yarn lint
