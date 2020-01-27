@@ -27,6 +27,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-await-in-loop': 'off',
     'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',

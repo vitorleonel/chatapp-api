@@ -20,8 +20,7 @@ class AuthService {
   }
 
   async authorization(accessToken: string): Promise<object> {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-    const { id, name } = <any>jwt.verify(accessToken, this.appSecret);
+    const { id, name } = jwt.verify(accessToken, this.appSecret) as any;
 
     return { id, name };
   }
